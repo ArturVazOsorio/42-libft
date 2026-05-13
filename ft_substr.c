@@ -6,7 +6,7 @@
 /*   By: aantela- <aantela-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 19:55:01 by aantela-          #+#    #+#             */
-/*   Updated: 2026/05/08 03:43:16 by aantela-         ###   ########.fr       */
+/*   Updated: 2026/05/13 04:33:16 by aantela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		len = 0;
 	else if (len > s_len - start)
 		len = s_len - start;
-	sub = malloc(sizeof(char) * (len + 1));
+	sub = ft_calloc(len + 1, sizeof(char));
 	if (!sub)
 		return (NULL);
-	ft_memcpy(sub, s + start, len);
-	sub[len] = 0;
+	if (len > 0)
+		ft_strlcpy(sub, s + start, len + 1);
 	return (sub);
 }
 

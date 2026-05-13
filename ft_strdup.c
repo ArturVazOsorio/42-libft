@@ -6,7 +6,7 @@
 /*   By: aantela- <aantela-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 18:15:43 by aantela-          #+#    #+#             */
-/*   Updated: 2026/05/03 18:53:10 by aantela-         ###   ########.fr       */
+/*   Updated: 2026/05/13 04:24:19 by aantela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strdup(const char *s)
 {
-	size_t		z;
+	size_t		len;
 	char		*duplicate;
 
-	z = (ft_strlen(s) + 1);
-	duplicate = malloc(sizeof(char) * z);
-	if (duplicate == NULL)
+	len = (ft_strlen(s) + 1);
+	duplicate = ft_calloc(len, sizeof(char));
+	if (!duplicate)
 		return (NULL);
-	ft_strlcpy(duplicate, s, z);
+	ft_strlcpy(duplicate, s, len);
 	return (duplicate);
 }
 
