@@ -6,7 +6,7 @@
 /*   By: aantela- <aantela-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 13:17:06 by aantela-          #+#    #+#             */
-/*   Updated: 2026/05/14 04:26:54 by aantela-         ###   ########.fr       */
+/*   Updated: 2026/05/14 07:25:49 by aantela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int		ft_isprint(int c);
  * @param str string recebida para verificar.
  * @return valor size_t do tamanho da string. 
  */
-size_t	ft_strlen(const char *str);
+size_t	ft_strlen(const char *s);
 /**
  * @brief ft_memset
  * preenche os n bytes da memoria apontada por s com o valor c.
@@ -188,7 +188,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
  * @param nptr ponteiro para a string a converter.
  * @return valor inteiro representado pela string.
  */
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *nptr);
 /**
  * @brief ft_calloc
  * aloca memoria e copia nmemb elementos de tamanho size inicializados a zero.
@@ -213,7 +213,7 @@ char	*ft_strdup(const char *s);
  * @param len   comprimento maximo da substring.
  * @return ponteiro para a nova substring alocada, ou NULL em caso de erro.
  */
-char	*ft_substr(const char *s, unsigned int start, size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 /**
  * @brief ft_split divide a string s em substrings usando c como delimitador.
  * @param s a string a dividir.

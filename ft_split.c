@@ -6,7 +6,7 @@
 /*   By: aantela- <aantela-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 03:11:56 by aantela-          #+#    #+#             */
-/*   Updated: 2026/05/14 03:35:45 by aantela-         ###   ########.fr       */
+/*   Updated: 2026/05/14 07:24:13 by aantela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ static int	fill_tab(char **tab, const char *s, char c)
 	return (1);
 }
 
-char	**ft_split(const char *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**tab;
 
