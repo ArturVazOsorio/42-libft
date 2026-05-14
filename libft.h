@@ -6,7 +6,7 @@
 /*   By: aantela- <aantela-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 13:17:06 by aantela-          #+#    #+#             */
-/*   Updated: 2026/05/14 04:23:57 by aantela-         ###   ########.fr       */
+/*   Updated: 2026/05/14 04:26:54 by aantela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -289,15 +289,66 @@ void	ft_putendl_fd(char *s, int fd);
  * @return  void.
  */
 void	ft_putnbr_fd(int n, int fd);
-
+/**
+ * @brief Cria um novo elemento de lista.
+ * @param content O conteúdo a ser armazenado no novo elemento.
+ * @return        O novo elemento da lista, ou NULL se a alocação falhar.
+ */
 t_list	*ft_lstnew(void *content);
+/**
+ * @brief Adiciona um novo elemento ao início da lista.
+ * @param lst ponteiro para o ponteiro do primeiro elemento da lista.
+ * @param new ponteiro para o novo elemento a adicionar.
+ * @return void.
+ */
 void	ft_lstadd_front(t_list **lst, t_list *new);
+/**
+ * @brief Conta o número de elementos de uma lista.
+ * @param lst o início da lista.
+ * @return o tamanho da lista.
+ */
 int		ft_lstsize(t_list *lst);
+/**
+ * @brief Retorna o último elemento da lista.
+ * @param lst o início da lista.
+ * @return ponteiro para o último elemento da lista.
+ */
 t_list	*ft_lstlast(t_list *lst);
+/**
+ * @brief Adiciona um novo elemento ao fim da lista.
+ * @param lst ponteiro para o ponteiro do primeiro elemento da lista.
+ * @param new ponteiro para o novo elemento a adicionar.
+ * @return void.
+ */
 void	ft_lstadd_back(t_list **lst, t_list *new);
+/**
+ * @brief Liberta a memória de um elemento da lista.
+ * @param lst o elemento a libertar.
+ * @param del ponteiro para a função de eliminação do conteúdo.
+ * @return void.
+ */
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
+/**
+ * @brief Elimina e liberta uma lista inteira.
+ * @param lst ponteiro para o ponteiro da lista.
+ * @param del ponteiro para a função de eliminação do conteúdo.
+ * @return void.
+ */
 void	ft_lstclear(t_list **lst, void (*del)(void*));
+/**
+ * @brief Itera a lista e aplica uma função ao conteúdo de cada elemento.
+ * @param lst o início da lista.
+ * @param f   a função a aplicar.
+ * @return void.
+ */
 void	ft_lstiter(t_list *lst, void (*f)(void *));
+/**
+ * @brief Itera a lista e cria uma nova lista resultante da função 'f'.
+ * @param lst o início da lista.
+ * @param f   a função a aplicar a cada elemento.
+ * @param del a função para eliminar o conteúdo se necessário.
+ * @return a nova lista, ou NULL se a alocação falhar.
+ */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
