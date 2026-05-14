@@ -6,7 +6,7 @@
 /*   By: aantela- <aantela-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 13:17:06 by aantela-          #+#    #+#             */
-/*   Updated: 2026/05/13 04:20:55 by aantela-         ###   ########.fr       */
+/*   Updated: 2026/05/14 04:23:57 by aantela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,18 +198,98 @@ int		ft_atoi(const char *str);
  * ou NULL em caso de erro ou overflow.
  */
 void	*ft_calloc(size_t nmemb, size_t size);
+/**
+ * @brief ft_strdup aloca memoria e duplica a string s.
+ * @param s ponteiro para a string a duplicar.
+ * @return ponteiro para a nova string alocada, ou NULL em caso de erro.
+ */
 char	*ft_strdup(const char *s);
+/**
+ * @brief ft_substr extrai uma substring de s
+ * a partir de start com comprimento maximo len.
+ * @param s     ponteiro para a string de origem.
+ * @param start indice do inicio da substring.
+ * Se maior que o comprimento de s, retorna string vazia.
+ * @param len   comprimento maximo da substring.
+ * @return ponteiro para a nova substring alocada, ou NULL em caso de erro.
+ */
 char	*ft_substr(const char *s, unsigned int start, size_t len);
+/**
+ * @brief ft_split divide a string s em substrings usando c como delimitador.
+ * @param s a string a dividir.
+ * @param c caractere delimitador.
+ * @return array de strings terminado em NULL, ou NULL em caso de erro.
+ */
 char	**ft_split(char const *s, char c);
+/**
+ * @brief ft_strjoin concatena s1 e s2 numa nova string alocada.
+ * @param s1 ponteiro para a primeira string.
+ * @param s2 ponteiro para a segunda string.
+ * @return ponteiro para a nova string alocada, ou NULL em caso de erro.
+ */
 char	*ft_strjoin(char const *s1, char const *s2);
+/**
+ * @brief ft_strtrim remove os caracteres
+ * presentes em set do inicio e do fim de s1.
+ * @param s1  ponteiro para a string a trimar.
+ * @param set ponteiro para o conjunto de caracteres a remover.
+ * @return ponteiro para a nova string alocada sem os caracteres do set,
+ * ou NULL em caso de erro.
+ */
 char	*ft_strtrim(char const *s1, char const *set);
+/**
+ * @brief ft_itoa converte um número inteiro para uma string.
+ * @param n o número inteiro a ser convertido.
+ * @return  a string que representa o número, ou NULL se a alocação falhar.
+ */
 char	*ft_itoa(int n);
+/**
+ * @brief ft_strmapi 
+ * aplica uma função a cada caractere de uma string, criando uma nova.
+ * @param s a string a ser percorrida.
+ * @param f a função a aplicar a cada caractere.
+ * @return  a nova string resultante das aplicações de 'f',
+ * ou NULL se a alocação falhar.
+ */
 char	*ft_strmapi(char const *s, char (*f) (unsigned int, char));
+/**
+ * @brief ft_striteri aplica uma função a cada caractere de uma string.
+ * @param s a string a ser percorrida e modificada.
+ * @param f a função a aplicar a cada caractere .
+ * @return void.
+ */
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+/**
+ * @brief ft_putchar_fd escreve um caractere num descritor de ficheiro.
+ * @param c  o caractere a ser impresso.
+ * @param fd o descritor de ficheiro onde o caractere sera escrito.
+ * @return  void.
+ */
 void	ft_putchar_fd(char c, int fd);
+/** @brief ft_putstr_fd escreve uma string num descritor de ficheiro.
+ *  @param s a string a ser impressa.
+ *  @param fd o descritor de ficheiro onde o caractere sera escrito.
+ *  @return void.
+ */
 void	ft_putstr_fd(char *s, int fd);
+/**
+ * @brief ft_putendl_fd
+ * escreve uma string seguida de uma nova linha num descritor de ficheiro.
+ * @param s  a string a ser impressa.
+ * @param fd o descritor de ficheiro onde a string e a linha serao escritas.
+ * @return void.
+ */
 void	ft_putendl_fd(char *s, int fd);
+/**
+ * @brief ft_putnbr_fd
+ * Escreve um número inteiro num descritor de ficheiro.
+ * Converte o número inteiro 'n' para caracteres.
+ * @param n  o numero inteiro a ser impresso.
+ * @param fd o descritor de ficheiro onde o numero sera escrito.
+ * @return  void.
+ */
 void	ft_putnbr_fd(int n, int fd);
+
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);

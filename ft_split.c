@@ -6,11 +6,18 @@
 /*   By: aantela- <aantela-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 03:11:56 by aantela-          #+#    #+#             */
-/*   Updated: 2026/05/09 06:03:53 by aantela-         ###   ########.fr       */
+/*   Updated: 2026/05/14 03:35:45 by aantela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+/**
+ * @brief Conta o numero de palavras em s separadas pelo delimitador c.
+ *        Usa uma flag in_word para detetar transicoes de separador para letra.
+ * @param s Ponteiro para a string a analisar.
+ * @param c Caractere delimitador.
+ * @return Numero de palavras encontradas.
+ */
 
 static size_t	count_words(const char *s, char c)
 {
@@ -32,6 +39,12 @@ static size_t	count_words(const char *s, char c)
 	}
 	return (count);
 }
+/**
+ * @brief Liberta todas as strings alocadas em tab e o proprio array.
+ *        Seguro para libertacao parcial pois ft_calloc garante NULL
+ *        nas posicoes nao preenchidas.
+ * @param tab Array de strings a libertar.
+ */
 
 static void	free_all(char **tab)
 {
@@ -46,6 +59,15 @@ static void	free_all(char **tab)
 	free(tab);
 }
 
+/**
+ * @brief Preenche o array tab com substrings de s separadas por c.
+ *        Para cada palavra: salta separadores, calcula o comprimento,
+ *        aloca com ft_substr e guarda no array. Termina tab com NULL.
+ * @param tab Array de strings ja alocado com ft_calloc.
+ * @param s   Ponteiro para a string de origem.
+ * @param c   Caractere delimitador.
+ * @return 1 em caso de sucesso, 0 se algum ft_substr falhar.
+ */
 static int	fill_tab(char **tab, const char *s, char c)
 {
 	size_t	word;

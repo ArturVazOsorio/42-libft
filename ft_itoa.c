@@ -6,7 +6,7 @@
 /*   By: aantela- <aantela-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 22:17:47 by aantela-          #+#    #+#             */
-/*   Updated: 2026/05/11 00:32:57 by aantela-         ###   ########.fr       */
+/*   Updated: 2026/05/14 04:14:10 by aantela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_itoa(int n)
 
 	nb = n;
 	len = ft_intlen(n);
-	str = (char *) ft_calloc(sizeof(char), len +1);
+	str = (char *) ft_calloc(len +1, sizeof(char));
 	if (!str)
 		return (NULL);
 	if (nb < 0)
